@@ -139,7 +139,7 @@ const ProductCard = ({ item }: { item: ProductItem }) => (
 );
 
 const ProductSection = ({ category }: { category: ProductCategory }) => (
-  <div className="mb-16">
+  <div id={category.category} className="mb-16 scroll-mt-20">
     <h2 className="text-2xl font-bold text-gray-900 mb-8">{category.category}</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {category.items.map((item) => (
@@ -158,7 +158,7 @@ const ServiceAdvantageCard = ({ advantage }: { advantage: ServiceAdvantage }) =>
 );
 
 const ServiceAdvantagesSection = () => (
-  <section className="py-20 bg-white">
+  <section id="service-advantages" className="py-20 bg-white scroll-mt-20">
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-900">我们的服务优势</h2>
