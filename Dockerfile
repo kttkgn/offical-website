@@ -18,6 +18,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # 构建应用
+ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build
 
 # 生产阶段
@@ -25,6 +26,7 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
 
 # 创建非 root 用户
 RUN addgroup --system --gid 1001 nodejs
