@@ -19,9 +19,10 @@ COPY . .
 
 # 构建应用
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV production
 RUN npm run build
 
-# 生产阶段
+# 运行阶段
 FROM base AS runner
 WORKDIR /app
 
