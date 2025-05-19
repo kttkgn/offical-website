@@ -6,39 +6,42 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const images = [
-  'smart-solution.jpg',
-  'data-analysis.jpg',
-  'service-advantage.jpg'
-];
+const images = ['ai.jpg', 'quant.jpg', 'dev.jpg'];
+const inputDir = path.join(__dirname, '../public/images');
+const outputDir = path.join(__dirname, '../public/images/compressed');
 
-async function compressImages() {
-  for (const image of images) {
-    const inputPath = path.join(__dirname, '../public/images', image);
-    const outputPath = path.join(__dirname, '../public/images', `compressed-${image}`);
+// 确保输出目录存在
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir, { recursive: true });
+}
 
-    try {
-      await sharp(inputPath)
-        .resize(800, 600, { // 调整图片尺寸
-          fit: 'cover',
-          position: 'center'
-        })
-        .jpeg({ // 使用 JPEG 格式，设置质量
-          quality: 80,
-          progressive: true // 使用渐进式加载
-        })
-        .toFile(outputPath);
+async function compressImage(filename) {
+  const inputPath = path.join(inputDir, filename);
+  const outputPath = path.join(outputDir, filename);
 
-      // 删除原图
-      fs.unlinkSync(inputPath);
-      // 重命名压缩后的图片
-      fs.renameSync(outputPath, inputPath);
+  try {
+    await sharp(inputPath)
+      .resize(800, 600, { // 调整图片尺寸
+        fit: 'cover',
+        position: 'center'
+      })
+      .jpeg({ // 转换为JPEG格式
+        quality: 80, // 压缩质量
+        progressive: true // 使用渐进式加载
+      })
+      .toFile(outputPath);
 
-      console.log(`Successfully compressed ${image}`);
-    } catch (error) {
-      console.error(`Error compressing ${image}:`, error);
-    }
+    console.log(`Successfully compressed ${filename}`);
+  } catch (error) {
+    console.error(`Error compressing ${filename}:`, error);
   }
 }
 
-compressImages(); 
+// 压缩所有图片
+async function compressAllImages() {
+  for (const image of images) {
+    await compressImage(image);
+  }
+}
+
+compressAllImages(); 

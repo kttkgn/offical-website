@@ -2,7 +2,9 @@
 
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import products from '@/data/productsData';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // 类型定义
 interface ProductItem {
@@ -176,20 +178,44 @@ const ServiceAdvantagesSection = () => (
 // 主页面组件
 export default function ProductsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Navbar />
-      <PageHeader />
-      
+      <div className="bg-blue-600 text-white py-20">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-center">产品与服务</h1>
+          <p className="text-xl text-center mt-4">为您提供全方位的解决方案</p>
+        </div>
+      </div>
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {PRODUCTS.map((category) => (
-            <ProductSection key={category.category} category={category} />
-          ))}
+          <div className="space-y-16 max-w-5xl mx-auto">
+            {products.map((product) => (
+              <div key={product.id} id={product.id} className="flex flex-col md:flex-row items-start md:items-center gap-8">
+                <div className="relative w-full md:w-72 h-48 flex-shrink-0 rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">{product.title}</h2>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+                  <ul className="space-y-2">
+                    {product.features.map((feature, index) => (
+                      <li key={index} className="flex items-center text-gray-700">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
-      <ServiceAdvantagesSection />
-      <Footer />
     </div>
   );
 } 
