@@ -1,130 +1,118 @@
-# 闪点果子官网
+# 闪电果子（北京）科技有限公司官网
 
-闪点果子官方网站，基于 Next.js 14 构建的现代化企业官网。
+这是闪电果子（北京）科技有限公司的官方网站项目，使用 Next.js 和 Tailwind CSS 构建的现代化企业网站。
 
 ## 技术栈
 
-- **框架**: Next.js 14 (App Router)
-- **语言**: TypeScript
+- **框架**: Next.js 15.3.2
 - **样式**: Tailwind CSS
-- **UI组件**: 
-  - Headless UI
-  - Heroicons
-- **字体**: Inter (Google Fonts)
-- **部署**: Vercel
+- **语言**: TypeScript
+- **部署**: Docker
 
 ## 功能特点
 
-- 🎨 现代化设计
-  - 响应式布局
-  - 优雅的动画效果
-  - 清晰的视觉层次
+- 响应式设计，支持各种设备
+- 现代化的 UI 界面
+- SEO 优化
+- 图片优化
+- 快速加载
+- 多语言支持（中文）
 
-- 🚀 性能优化
-  - 图片优化
-  - 字体优化
-  - 代码分割
-  - 静态生成
+## 项目结构
 
-- 📱 移动端适配
-  - 响应式导航
-  - 移动优先设计
-  - 触摸友好交互
+```
+├── src/
+│   ├── app/                 # 页面组件
+│   ├── components/          # 可复用组件
+│   ├── data/               # 静态数据
+│   └── styles/             # 样式文件
+├── public/                 # 静态资源
+├── Dockerfile             # Docker 配置
+└── next.config.js         # Next.js 配置
+```
 
-## 页面结构
-
-- 首页 (`/`)
-  - 公司简介
-  - 核心业务
-  - 产品展示
-  - 新闻动态
-
-- 关于我们 (`/about`)
-  - 公司介绍
-  - 发展历程
-  - 团队介绍
-
-- 产品服务 (`/products`)
-  - 智能解决方案
-  - 数据分析平台
-  - 产品特点
-  - 服务优势
-
-- 联系我们 (`/contact`)
-  - 联系方式
-  - 工作时间
-  - 在线咨询
-
-## 开发指南
+## 本地开发
 
 ### 环境要求
 
-- Node.js 18.17 或更高版本
-- npm 或 yarn 包管理器
+- Node.js 18.0.0 或更高版本
+- npm 10.0.0 或更高版本
 
-### 安装依赖
+### 安装步骤
 
+1. 克隆项目
+```bash
+git clone [项目地址]
+cd [项目目录]
+```
+
+2. 安装依赖
 ```bash
 npm install
-# 或
-yarn install
 ```
 
-### 开发环境运行
-
+3. 启动开发服务器
 ```bash
 npm run dev
-# 或
-yarn dev
 ```
+
+4. 访问 http://localhost:3000
 
 ### 构建生产版本
 
 ```bash
 npm run build
-# 或
-yarn build
 ```
 
-### 启动生产服务
+### 启动生产服务器
 
 ```bash
-npm run start
-# 或
-yarn start
+npm start
 ```
 
-## 项目结构
+## Docker 部署
 
-```
-src/
-├── app/                # 页面组件
-│   ├── about/         # 关于我们
-│   ├── contact/       # 联系我们
-│   ├── products/      # 产品服务
-│   └── layout.tsx     # 全局布局
-├── components/        # 可复用组件
-│   ├── Navbar.tsx    # 导航栏
-│   └── Footer.tsx    # 页脚
-└── styles/           # 全局样式
+1. 构建镜像
+```bash
+docker build -t shandianguozi-website .
 ```
 
-## 部署
+2. 运行容器
+```bash
+docker run -p 3000:3000 shandianguozi-website
+```
 
-项目使用 Vercel 进行部署，支持自动部署和预览功能。
+## 主要页面
+
+- 首页 (/)
+- 关于我们 (/about)
+- 产品服务 (/products)
+- 联系我们 (/contact)
+
+## 开发规范
+
+- 使用 TypeScript 进行开发
+- 遵循 ESLint 规则
+- 使用 Prettier 进行代码格式化
+- 组件采用函数式组件
+- 使用 Tailwind CSS 进行样式管理
+
+## 性能优化
+
+- 图片优化
+- 代码分割
+- 静态生成
+- 缓存策略
+- 延迟加载
 
 ## 贡献指南
 
 1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
+2. 创建特性分支
+3. 提交更改
+4. 推送到分支
 5. 创建 Pull Request
-
-## 联系方式
-
-- 邮箱：lxw@shandianguozi.com
 
 ## 许可证
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+© 2024 闪电果子（北京）科技有限公司. 保留所有权利。
