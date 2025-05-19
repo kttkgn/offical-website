@@ -4,21 +4,8 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import products from '@/data/productsData';
 import Image from 'next/image';
-import Link from 'next/link';
 
 // 类型定义
-interface ProductItem {
-  title: string;
-  description: string;
-  features: string[];
-  image: string;
-}
-
-interface ProductCategory {
-  category: string;
-  items: ProductItem[];
-}
-
 interface ServiceAdvantage {
   title: string;
   description: string;
@@ -26,52 +13,6 @@ interface ServiceAdvantage {
 }
 
 // 常量数据
-const PRODUCTS: ProductCategory[] = [
-  {
-    category: '智能解决方案',
-    items: [
-      {
-        title: '智能工厂解决方案',
-        description: '通过物联网和人工智能技术，实现工厂生产全流程的智能化管理',
-        features: [
-          '生产设备实时监控',
-          '预测性维护',
-          '生产计划优化',
-          '质量控制自动化'
-        ],
-        image: '/images/product1.jpg'
-      },
-      {
-        title: '智慧城市解决方案',
-        description: '打造智能化城市管理系统，提升城市运营效率',
-        features: [
-          '交通管理智能化',
-          '公共安全监控',
-          '环境监测系统',
-          '能源管理优化'
-        ],
-        image: '/images/product2.jpg'
-      }
-    ]
-  },
-  {
-    category: '数据分析平台',
-    items: [
-      {
-        title: '企业数据分析平台',
-        description: '为企业提供全方位的数据分析解决方案',
-        features: [
-          '多源数据整合',
-          '实时数据分析',
-          '可视化报表',
-          '智能决策支持'
-        ],
-        image: '/images/product3.jpg'
-      }
-    ]
-  }
-];
-
 const SERVICE_ADVANTAGES: ServiceAdvantage[] = [
   {
     title: '专业团队',
@@ -112,67 +53,12 @@ const SERVICE_ADVANTAGES: ServiceAdvantage[] = [
 ];
 
 // 组件
-const PageHeader = () => (
-  <div className="bg-blue-600 text-white py-20">
-    <div className="container mx-auto px-4">
-      <h1 className="text-4xl md:text-5xl font-bold text-center">产品与服务</h1>
-      <p className="text-xl text-center mt-4">为您提供全方位的解决方案</p>
-    </div>
-  </div>
-);
-
-const ProductCard = ({ item }: { item: ProductItem }) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-    <div className="p-6">
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
-      <p className="text-gray-600 mb-4">{item.description}</p>
-      <ul className="space-y-2">
-        {item.features.map((feature, index) => (
-          <li key={index} className="flex items-center text-gray-600">
-            <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-            </svg>
-            {feature}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-);
-
-const ProductSection = ({ category }: { category: ProductCategory }) => (
-  <div id={category.category} className="mb-16 scroll-mt-20">
-    <h2 className="text-2xl font-bold text-gray-900 mb-8">{category.category}</h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {category.items.map((item) => (
-        <ProductCard key={item.title} item={item} />
-      ))}
-    </div>
-  </div>
-);
-
 const ServiceAdvantageCard = ({ advantage }: { advantage: ServiceAdvantage }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg">
     <div className="mb-4">{advantage.icon}</div>
     <h3 className="text-xl font-semibold text-gray-900 mb-2">{advantage.title}</h3>
     <p className="text-gray-600">{advantage.description}</p>
   </div>
-);
-
-const ServiceAdvantagesSection = () => (
-  <section id="service-advantages" className="py-20 bg-white scroll-mt-20">
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900">我们的服务优势</h2>
-        <div className="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {SERVICE_ADVANTAGES.map((advantage) => (
-          <ServiceAdvantageCard key={advantage.title} advantage={advantage} />
-        ))}
-      </div>
-    </div>
-  </section>
 );
 
 // 主页面组件
@@ -200,18 +86,33 @@ export default function ProductsPage() {
                   />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">{product.title}</h2>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{product.description}</p>
-                  <ul className="space-y-2">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">{product.title}</h2>
+                  <p className="text-gray-600 mb-6">{product.description}</p>
+                  <ul className="space-y-3">
                     {product.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-gray-700">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                      <li key={index} className="flex items-center text-gray-600">
+                        <svg className="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">我们的服务优势</h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SERVICE_ADVANTAGES.map((advantage) => (
+              <ServiceAdvantageCard key={advantage.title} advantage={advantage} />
             ))}
           </div>
         </div>
