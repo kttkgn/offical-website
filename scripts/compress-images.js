@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const images = ['ai.jpg', 'quant.jpg', 'dev.jpg'];
+const images = ['ai.jpg', 'visual.jpg', 'dev.jpg'];
 const inputDir = path.join(__dirname, '../public/images');
 const outputDir = path.join(__dirname, '../public/images/compressed');
 
@@ -38,10 +38,6 @@ async function compressImage(filename) {
 }
 
 // 压缩所有图片
-async function compressAllImages() {
-  for (const image of images) {
-    await compressImage(image);
-  }
-}
-
-compressAllImages(); 
+Promise.all(images.map(compressImage))
+  .then(() => console.log('All images compressed successfully'))
+  .catch(error => console.error('Error compressing images:', error)); 
