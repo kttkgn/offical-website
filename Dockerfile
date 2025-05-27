@@ -17,6 +17,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY package*.json ./
 
+# 安装依赖
+RUN npm ci
+
+# 复制源代码
+COPY . .
+
 # 构建应用
 RUN npm run build
 
@@ -26,6 +32,7 @@ WORKDIR /app
 
 # 设置环境变量
 ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 # 复制必要的文件
 COPY --from=builder /app/next.config.js ./
