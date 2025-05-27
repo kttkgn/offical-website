@@ -120,6 +120,11 @@ const Footer = () => {
           <p className="text-gray-400 hover:text-gray-300 transition-colors duration-300">
             © {new Date().getFullYear()} 闪电果子（北京）科技有限公司. 保留所有权利.
           </p>
+          <p className="text-gray-400 mt-2">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors duration-300">
+              京ICP备2025127308号
+            </a>
+          </p>
         </div>
       </div>
     </footer>
