@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 
 export default function ContactPage() {
   const handleEmailClick = () => {
-    window.location.href = 'mailto:lxw@shandianguozi.com';
+    window.location.href = 'mailto:zlkpo@hotmail.com';
   };
 
   return (
