@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,11 +13,37 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shandianguozi.com"),
   title: {
-    default: "闪电果子（北京）科技有限公司 - 智能解决方案提供商",
+    default: "闪电果子（北京）科技有限公司 - AI智能服务、视觉内容创作、开发外包",
     template: "%s | 闪电果子（北京）科技有限公司"
   },
-  description: "闪电果子（北京）科技有限公司是一家专注于智能解决方案的高新技术企业，为企业提供全方位的智能化解决方案，提升运营效率。",
-  keywords: ["智能解决方案", "数据分析", "企业服务", "闪电果子科技", "智能化转型"],
+  description: "闪电果子（北京）科技有限公司是一家专注于AI智能服务、视觉内容创作和开发外包的高新技术企业。提供智能客服、内容生成、简历优化、视频制作、软件开发等全方位服务。",
+  keywords: [
+    "闪电果子科技",
+    "闪电果子北京",
+    "闪电果子",
+    "闪电",
+    "果子",
+    "北京闪电果子",
+    "北京闪电",
+    "北京果子",
+    "AI智能服务",
+    "智能客服",
+    "内容生成",
+    "简历优化",
+    "视觉内容创作",
+    "视频制作",
+    "开发外包",
+    "软件开发",
+    "北京科技公司",
+    "北京软件开发",
+    "北京AI公司",
+    "北京视频制作",
+    "北京科技企业",
+    "北京高新技术企业",
+    "北京互联网公司",
+    "北京IT公司",
+    "北京技术外包"
+  ],
   authors: [{ name: "闪电果子（北京）科技有限公司" }],
   creator: "闪电果子（北京）科技有限公司",
   publisher: "闪电果子（北京）科技有限公司",
@@ -25,13 +52,16 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  alternates: {
+    canonical: "https://www.shandianguozi.com",
+  },
   openGraph: {
     type: "website",
     locale: "zh_CN",
     url: "https://www.shandianguozi.com",
     siteName: "闪电果子（北京）科技有限公司",
-    title: "闪电果子（北京）科技有限公司 - 智能解决方案提供商",
-    description: "闪电果子（北京）科技有限公司是一家专注于智能解决方案的高新技术企业，为企业提供全方位的智能化解决方案，提升运营效率。",
+    title: "闪电果子（北京）科技有限公司 - AI智能服务、视觉内容创作、开发外包",
+    description: "闪电果子（北京）科技有限公司是一家专注于AI智能服务、视觉内容创作和开发外包的高新技术企业。提供智能客服、内容生成、简历优化、视频制作、软件开发等全方位服务。",
     images: [
       {
         url: "https://www.shandianguozi.com/images/og-image.svg",
@@ -43,8 +73,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "闪电果子（北京）科技有限公司 - 智能解决方案提供商",
-    description: "闪电果子（北京）科技有限公司是一家专注于智能解决方案的高新技术企业，为企业提供全方位的智能化解决方案，提升运营效率。",
+    title: "闪电果子（北京）科技有限公司 - AI智能服务、视觉内容创作、开发外包",
+    description: "闪电果子（北京）科技有限公司是一家专注于AI智能服务、视觉内容创作和开发外包的高新技术企业。提供智能客服、内容生成、简历优化、视频制作、软件开发等全方位服务。",
     images: ["https://www.shandianguozi.com/images/og-image.svg"],
   },
   robots: {
@@ -70,12 +100,43 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        <meta name="baidu-site-verification" content="your-baidu-site-verification" />
+        <meta name="360-site-verification" content="your-360-site-verification" />
+        <meta name="sogou-site-verification" content="your-sogou-site-verification" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         <Navbar />
         <main className="min-h-screen">
           {children}
         </main>
         <Footer />
+        <Script id="schema-org" type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "闪电果子（北京）科技有限公司",
+              "url": "https://www.shandianguozi.com",
+              "logo": "https://www.shandianguozi.com/images/og-image.svg",
+              "description": "闪电果子（北京）科技有限公司是一家专注于AI智能服务、视觉内容创作和开发外包的高新技术企业。",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "北京",
+                "addressCountry": "CN"
+              },
+              "sameAs": [
+                "https://www.shandianguozi.com"
+              ]
+            }
+          `}
+        </Script>
       </body>
     </html>
   );
