@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: "闪电果子（北京）科技有限公司是一家专注于智能解决方案的高新技术企业，为企业提供全方位的智能化解决方案，提升运营效率。",
     images: [
       {
-        url: "/images/og-image.svg",
+        url: "https://www.shandianguozi.com/images/og-image.svg",
         width: 1200,
         height: 630,
         alt: "闪电果子（北京）科技有限公司",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "闪电果子（北京）科技有限公司 - 智能解决方案提供商",
     description: "闪电果子（北京）科技有限公司是一家专注于智能解决方案的高新技术企业，为企业提供全方位的智能化解决方案，提升运营效率。",
-    images: ["/images/og-image.svg"],
+    images: ["https://www.shandianguozi.com/images/og-image.svg"],
   },
   robots: {
     index: true,
