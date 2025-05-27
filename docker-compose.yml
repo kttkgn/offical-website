@@ -1,6 +1,10 @@
+version: '3.8'
+
 services:
   web:
-    image: registry.cn-hangzhou.aliyuncs.com/shandianguozi/official-website:${VERSION:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: official-website
     restart: always
     ports:
