@@ -9,11 +9,7 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
-  swcMinify: true,
   productionBrowserSourceMaps: false,
-  experimental: {
-    h2ServerPush: true,
-  },
   headers: async () => {
     return [
       {

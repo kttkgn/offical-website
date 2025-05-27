@@ -8,8 +8,8 @@ WORKDIR /app
 FROM base AS deps
 # 复制 package.json 和 package-lock.json
 COPY package.json package-lock.json ./
-# 安装依赖并清理缓存
-RUN npm ci --only=production && \
+# 安装所有依赖（包括开发依赖）
+RUN npm ci && \
     npm cache clean --force
 
 # 构建阶段
