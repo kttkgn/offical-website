@@ -51,7 +51,7 @@ export default function ContactPage() {
                         onClick={handleEmailClick}
                         className="mt-1 text-gray-600 hover:text-blue-600 transition-colors duration-300"
                       >
-                        lxw@shandianguozi.com
+                        zlkpo@hotmail.com
                       </button>
                     </div>
                   </div>
