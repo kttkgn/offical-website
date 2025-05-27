@@ -6,19 +6,14 @@ const nextConfig = {
     domains: ['images.unsplash.com'],
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    quality: 80,
     minimumCacheTTL: 60,
   },
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
-  swcMinify: true,
   productionBrowserSourceMaps: false,
   experimental: {
-    h2ServerPush: true,
-    webpackBuildWorker: true,
     optimizeCss: true,
-    isrMemoryCacheSize: 0,
   },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
