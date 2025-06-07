@@ -9,10 +9,10 @@ export default function Hero() {
       <div className="container mx-auto px-4 py-24 md:py-32 relative">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            智能科技解决方案
+            专业的技术服务
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 mb-8">
-            为企业提供全方位的智能化解决方案，助力企业数字化转型
+            为企业提供视觉内容创作和软件开发服务，助力企业数字化转型
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 

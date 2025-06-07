@@ -13,10 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shandianguozi.com"),
   title: {
-    default: "闪电果子（北京）科技有限公司 - AI智能服务、视觉内容创作、开发外包",
+    default: "闪电果子（北京）科技有限公司 - 视觉内容创作、开发外包",
     template: "%s | 闪电果子（北京）科技有限公司"
   },
-  description: "闪电果子（北京）科技有限公司是一家专注于AI智能服务、视觉内容创作和开发外包的高新技术企业。提供智能客服、内容生成、简历优化、视频制作、软件开发等全方位服务。",
+  description: "闪电果子（北京）科技有限公司是一家专注于视觉内容创作和开发外包的高新技术企业。提供视频制作、软件开发等全方位服务。",
   keywords: [
     "闪电果子科技",
     "闪电果子北京",
@@ -26,17 +26,12 @@ export const metadata: Metadata = {
     "北京闪电果子",
     "北京闪电",
     "北京果子",
-    "AI智能服务",
-    "智能客服",
-    "内容生成",
-    "简历优化",
     "视觉内容创作",
     "视频制作",
     "开发外包",
     "软件开发",
     "北京科技公司",
     "北京软件开发",
-    "北京AI公司",
     "北京视频制作",
     "北京科技企业",
     "北京高新技术企业",
@@ -60,8 +55,8 @@ export const metadata: Metadata = {
     locale: "zh_CN",
     url: "https://www.shandianguozi.com",
     siteName: "闪电果子（北京）科技有限公司",
-    title: "闪电果子（北京）科技有限公司 - AI智能服务、视觉内容创作、开发外包",
-    description: "闪电果子（北京）科技有限公司是一家专注于AI智能服务、视觉内容创作和开发外包的高新技术企业。提供智能客服、内容生成、简历优化、视频制作、软件开发等全方位服务。",
+    title: "闪电果子（北京）科技有限公司 - 视觉内容创作、开发外包",
+    description: "闪电果子（北京）科技有限公司是一家专注于视觉内容创作和开发外包的高新技术企业。提供视频制作、软件开发等全方位服务。",
     images: [
       {
         url: "https://www.shandianguozi.com/images/og-image.svg",
@@ -73,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "闪电果子（北京）科技有限公司 - AI智能服务、视觉内容创作、开发外包",
-    description: "闪电果子（北京）科技有限公司是一家专注于AI智能服务、视觉内容创作和开发外包的高新技术企业。提供智能客服、内容生成、简历优化、视频制作、软件开发等全方位服务。",
+    title: "闪电果子（北京）科技有限公司 - 视觉内容创作、开发外包",
+    description: "闪电果子（北京）科技有限公司是一家专注于视觉内容创作和开发外包的高新技术企业。提供视频制作、软件开发等全方位服务。",
     images: ["https://www.shandianguozi.com/images/og-image.svg"],
   },
   robots: {

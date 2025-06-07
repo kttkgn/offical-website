@@ -14,13 +14,13 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <p className="text-gray-300 leading-relaxed">
-                专注于智能解决方案的高新技术企业
+                专注于视觉内容创作和软件开发的高新技术企业
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                我们致力于为企业提供智能化、数字化的解决方案，通过技术创新推动产业升级，助力企业实现数字化转型。
+                我们致力于为企业提供专业的视觉内容创作和软件开发服务，通过技术创新推动产业升级，助力企业实现数字化转型。
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                以客户需求为中心，以技术创新为驱动，打造专业、可靠、高效的智能服务。
+                以客户需求为中心，以技术创新为驱动，打造专业、可靠、高效的技术服务。
               </p>
             </div>
           </div>

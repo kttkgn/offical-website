@@ -1,19 +1,5 @@
 const products = [
   {
-    id: 'ai',
-    title: 'AI智能服务',
-    description: '提供智能客服、内容生成、简历优化等AI解决方案，帮助企业或个人高效构建智能化能力。',
-    image: '/images/compressed/ai.jpg',
-    features: [
-      '智能客服系统',
-      '智能内容生成助手',
-      '简历优化与模拟面试',
-      '智能法律/合同助手',
-      '学习辅助系统',
-      '智能办公/个人助理'
-    ]
-  },
-  {
     id: 'visual',
     title: '视觉内容创作',
     description: '提供从前期策划到拍摄与后期的全流程服务，助力品牌打造独特的视觉表达。',
