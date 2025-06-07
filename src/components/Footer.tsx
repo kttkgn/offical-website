@@ -105,12 +105,6 @@ const Footer = () => {
                 </svg>
                 <span>小红书</span>
               </a>
-              <div className="flex items-center space-x-3 text-gray-300 group">
-                <svg className="w-6 h-6 flex-shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8.691 2.188C3.891 2.188 0 6.078 0 10.875c0 2.752 1.34 5.19 3.4 6.69l-1.05 3.15c-.1.3.1.6.4.6.1 0 .2 0 .3-.1l3.9-2.1c1.1.3 2.2.5 3.4.5 4.8 0 8.7-3.89 8.7-8.69 0-4.8-3.9-8.69-8.7-8.69zm4.5 11.69c-.2.2-.5.2-.7 0l-2.1-2.1-2.1 2.1c-.2.2-.5.2-.7 0-.2-.2-.2-.5 0-.7l2.1-2.1-2.1-2.1c-.2-.2-.2-.5 0-.7.2-.2.5-.2.7 0l2.1 2.1 2.1-2.1c.2-.2.5-.2.7 0 .2.2.2.5 0 .7l-2.1 2.1 2.1 2.1c.2.2.2.5 0 .7z"/>
-                </svg>
-                <span className="break-words">微信公众号：闪电果子科技</span>
-              </div>
             </div>
           </div>
         </div>
